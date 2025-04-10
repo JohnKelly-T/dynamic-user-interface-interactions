@@ -42,9 +42,56 @@ main {
 }
 
 .image-carousel {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 1.5rem;
+    gap: 1rem;
     width: 50%;
     aspect-ratio: 14/9;
     background: #252C30;
     border: 1px solid #587083;
     border-radius: 5px;
+}
+
+.carousel-btn-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.carousel-nav-container {
+    flex: 1; 
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.carousel-nav {
+    background: none;
+    border: 2px solid #587083;
+    border-radius: 50%;
+    width: 1rem;
+    aspect-ratio: 1;
+}
+
+.active-nav {
+    background: #587083;
+}
+
+.carousel-btn {
+    width: 2.5rem;
+    aspect-ratio: 1;
+    background: none;
+    border: 2px solid #587083;
+    border-radius: 50%;
+    color: #587083;
+}
+
+#back-btn {
+    transform: rotate(-90deg);
+}
+
+#next-btn {
+    transform: rotate(90deg);
 }
