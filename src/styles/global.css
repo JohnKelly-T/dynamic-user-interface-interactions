@@ -99,3 +99,23 @@ main {
 #next-btn {
     transform: rotate(90deg);
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+.credit {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+}
+
+.credit a {
+    display: flex;
+    gap: 0.2rem;
+    font-size: inherit;
+    color: inherit;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
