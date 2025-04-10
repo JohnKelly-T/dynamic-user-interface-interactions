@@ -4,6 +4,7 @@
 
 * {
   margin: 0;
+  font-family: sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
