@@ -8,3 +8,10 @@ header {
     display: flex;
     justify-content: space-between;
 }
+
+.dropdown-trigger {
+    background: #252C30;
+    border: 1px solid #587083;
+    border-radius: 3px;
+    padding: 0.1rem 1rem;
+}
