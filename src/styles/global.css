@@ -2,6 +2,10 @@ body {
     background: #0E1317;
     color: #eeeeee;
     padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
 }
 
 header {
@@ -27,4 +31,8 @@ header {
 .dropdown-item:hover {
     background: #313A3F;
     border-radius: 3px;
+}
+
+main {
+    flex: 1;
 }
