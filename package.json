@@ -18,5 +18,8 @@
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --config webpack.dev.js",
     "deploy": "git checkout gh-pages && git merge main --no-edit && git add dist -f && git commit -m 'Deployment commit' && git subtree push --prefix dist origin gh-pages && git checkout main"
+  },
+  "dependencies": {
+    "@johnkelly-t/dropdown-menu": "^1.0.1"
   }
 }
