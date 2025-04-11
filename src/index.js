@@ -1,6 +1,19 @@
 import { setupDropdown } from "@johnkelly-t/dropdown-menu";
 import "./styles/reset.css";
 import "./styles/global.css";
+import beachImage from "./images/beach.jpg";
+import fieldImage from "./images/field.jpg";
+import forestImage from "./images/forest.jpg";
+import mountainImage from "./images/mountain.jpg";
+import waterfallImage from "./images/waterfall.jpg";
+
+let imageSources = [
+    mountainImage,
+    fieldImage,
+    waterfallImage,
+    forestImage,
+    beachImage,
+]
 
 
 let dropdowns = document.querySelectorAll('.dropdown-trigger');
@@ -47,6 +60,9 @@ for (let i = 0; i < imageCount; i++) {
     } else if (i === imageCount - 2) {
         img.style.left = leftHidden;
     } 
+
+    // add image source
+    img.src = imageSources[i];
 
     imageCarousel.appendChild(img);
     images.push(img);
