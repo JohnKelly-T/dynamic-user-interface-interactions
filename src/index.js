@@ -97,6 +97,8 @@ function moveSlide(direction) {
         }
     }
 
+    updateActiveNav();
+
     // temporarily disable buttons
     nextButton.disabled = true;
     backButton.disabled = true;
@@ -134,5 +136,48 @@ function moveSlide(direction) {
     imageCarousel.append(teleportingElement);
 }
 
+function jumpToSlide(index) {
+    let carouselNavs = document.querySelectorAll(".carousel-nav");
+
+    activeImage = index;
+
+    updateActiveNav();
+
+    // reset transform attributes of elements
+    for (let img of images) {
+        img.style.transform = "translate(-50%, -50%) scale(80%)";
+        img.remove();
+    }
+
+    images[(((activeImage - 2) % images.length) + images.length) % images.length].style.left = leftHidden;
+    images[(((activeImage - 1) % images.length) + images.length) % images.length].style.left = left;
+    images[activeImage].style.left = center;
+    images[activeImage].style.transform = "translate(-50%, -50%)"; // make center image larger by removing scale(80%)
+    images[(activeImage + 1) % images.length].style.left = right;
+    images[(activeImage + 2) % images.length].style.left = rightHidden;
+
+    for (let img of images) {
+        imageCarousel.append(img);
+    }   
+}
+
+function updateActiveNav() {
+    // remove active-nav class
+    carouselNavs.forEach(nav => {
+        nav.classList.remove("active-nav");
+    })
+
+    carouselNavs[activeImage].classList.add("active-nav");
+
+}
+
 nextButton.addEventListener("click", () => moveSlide("right"));
 backButton.addEventListener("click", () => moveSlide("left"));
+
+let carouselNavs = document.querySelectorAll(".carousel-nav");
+
+carouselNavs.forEach((nav, index) => {
+    nav.addEventListener("click", () => {
+        jumpToSlide(index);
+    });
+})
