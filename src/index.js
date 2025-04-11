@@ -147,6 +147,12 @@ function moveSlide(direction) {
 }
 
 function jumpToSlide(index) {
+    // reset slideTimer 
+    clearInterval(slideTimer);
+    slideTimer = setInterval(() => {
+        moveSlide("right");
+    }, 5000);
+    
     activeImage = index;
 
     updateActiveNav();
