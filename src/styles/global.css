@@ -43,6 +43,59 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
+}
+
+.image-credits {
+    position: relative;
+    border: 1px solid #587083;
+    border-radius: 3px;
+    padding: 0.1rem 1rem;
+}
+
+.image-credits:hover::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    left: 0;
+}
+
+@keyframes imageCreditShow {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, calc(-100% - 0.5rem));
+    }
+}
+
+.image-credits-content {
+    display: none;
+    flex-direction: column;
+    text-wrap: nowrap;
+    gap: 0.2rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, calc(-100% - 0.5rem));
+    background: #0E1317;
+    border: 1px solid #587083;
+    border-radius: 3px;
+    padding: 1rem;
+    animation: imageCreditShow 100ms ease-in 1;
+    color: #587083;
+}
+
+.image-credits:hover .image-credits-content {
+    display: flex;
+}
+
+.image-credits a {
+    color: #587083;
 }
 
 .image-carousel {
