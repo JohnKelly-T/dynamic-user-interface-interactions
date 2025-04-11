@@ -22,6 +22,7 @@ setupDropdown(dropdowns[0], "hover");
 setupDropdown(dropdowns[1], "hover", "center");
 setupDropdown(dropdowns[2], "hover", "right");
 
+let carouselNavContainer = document.querySelector(".carousel-nav-container");
 let imageCarousel = document.querySelector(".image-carousel");
 let nextButton = document.querySelector("#next-btn");
 let backButton = document.querySelector("#back-btn");
@@ -68,6 +69,18 @@ for (let i = 0; i < imageCount; i++) {
     images.push(img);
 }
 
+// add image nav buttons dynamically
+for (let i = 0; i < images.length; i++) {
+    let carouselNav = document.createElement("div");
+    carouselNav.classList.add("carousel-nav");
+
+    // add active to first element
+    if (i === 0) {
+        carouselNav.classList.add("active-nav");
+    }
+
+    carouselNavContainer.appendChild(carouselNav);
+}
 
 function moveSlide(direction) {
 
