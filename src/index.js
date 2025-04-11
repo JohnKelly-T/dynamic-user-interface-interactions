@@ -137,8 +137,6 @@ function moveSlide(direction) {
 }
 
 function jumpToSlide(index) {
-    let carouselNavs = document.querySelectorAll(".carousel-nav");
-
     activeImage = index;
 
     updateActiveNav();
@@ -162,6 +160,7 @@ function jumpToSlide(index) {
 }
 
 function updateActiveNav() {
+    let carouselNavs = document.querySelectorAll(".carousel-nav");
     // remove active-nav class
     carouselNavs.forEach(nav => {
         nav.classList.remove("active-nav");
