@@ -15,7 +15,6 @@ let imageSources = [
     beachImage,
 ]
 
-
 let dropdowns = document.querySelectorAll('.dropdown-trigger');
 
 setupDropdown(dropdowns[0], "hover");
@@ -82,7 +81,18 @@ for (let i = 0; i < images.length; i++) {
     carouselNavContainer.appendChild(carouselNav);
 }
 
+// Move slide every 5 seconds
+let slideTimer = setInterval(() => {
+    moveSlide("right");
+}, 5000);
+
 function moveSlide(direction) {
+
+    // reset slideTimer 
+    clearInterval(slideTimer);
+    slideTimer = setInterval(() => {
+        moveSlide("right");
+    }, 5000);
 
     if (direction === "left") {
         // decrement active image index
