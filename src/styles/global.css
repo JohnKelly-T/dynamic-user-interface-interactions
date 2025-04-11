@@ -79,6 +79,7 @@ main {
     border-radius: 50%;
     width: 0.8rem;
     aspect-ratio: 1;
+    cursor: pointer;
 }
 
 .active-nav {
