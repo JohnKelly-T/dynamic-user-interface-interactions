@@ -46,6 +46,8 @@ main {
 }
 
 .image-carousel {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -75,7 +77,7 @@ main {
     background: none;
     border: 2px solid #587083;
     border-radius: 50%;
-    width: 1rem;
+    width: 0.8rem;
     aspect-ratio: 1;
 }
 
@@ -119,4 +121,24 @@ footer {
     color: inherit;
     text-underline-offset: 3px;
     text-decoration-thickness: 1px;
+}
+
+
+.carousel-image {
+    --image-width: 65%;
+    --bezier: cubic-bezier(0.39,0.57,0.56,1);
+    display: block;
+    position: absolute;
+    top: calc(50% - 1rem);
+    transform: translate(-50%, -50%);
+    background-color: #404d54;
+    border: none;
+    border-radius: 5px;
+    width: var(--image-width);
+    aspect-ratio: 4/3;
+    transform: translate(-50%, -50%) scale(80%);
+    transition: left var(--duration) var(--bezier),
+                transform var(--duration) var(--bezier);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    object-fit: cover;
 }
