@@ -28,7 +28,7 @@ let nextButton = document.querySelector("#next-btn");
 let backButton = document.querySelector("#back-btn");
 
 let activeImage = 0;
-let imageCount = 5;
+let imageCount = imageSources.length;
 let duration = 700;
 
 // slide duration
